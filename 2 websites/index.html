@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My new Website</title>
+  <link rel="icon" type="image/x-icon" href="https://www.google.com/favicon.ico">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: #444;
+      justify-content: center;
+    }
+
+    .navbar a {
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #666;
+    }
+
+    .main {
+      flex: 1;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .main-content, .sidebar {
+      background-color: white;
+      padding: 80px;
+      border: 1px solid #ccc;
+    }
+
+    .main-content {
+      flex: 2;
+      min-width: 300px;
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .main-image {
+      width: 100%;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+    }
+
+    .cards {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: #e9e9e9;
+      padding: 15px;
+      border-radius: 5px;
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin: 8px 0;
+      padding: 8px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .lang-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 6px 12px;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .modal {
+      opacity: 0;
+      pointer-events: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+      transition: opacity 0.4s ease;
+    }
+
+    .modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 40px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .modal.show .modal-content {
+      transform: scale(1);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
+    }
+
+    .social-buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .social-btn img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .social-btn:hover {
+      background-color: #f1f1f1;
+    }
+
+    .divider {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      color: #888;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .divider:not(:empty)::before {
+      margin-right: 10px;
+    }
+
+    .divider:not(:empty)::after {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button class="lang-btn" onclick="toggleLang()">RU</button>
+
+  <header class="header">
+    <h1>My Awesome Website</h1>
+  </header>
+
+  <nav class="navbar">
+    <a href="#" id="nav-home">Home Page</a>
+    <a href="#" id="nav-about">About Us</a>
+    <a href="#" id="nav-services">Our Services</a>
+    <a href="#" id="nav-contact">Contact Us</a>
+    <a href="javascript:void(0);" id="nav-register" onclick="openModal()">Register</a>
+  </nav>
+
+  <main class="main">
+    <div class="container">
+      <div class="main-content">
+        <h2 id="welcome">Welcome!</h2>
+        <p id="intro">This is a website layout using Flexbox and CSS styling. Below is an image and some information.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/AsusTek_Computer_Logo.svg" alt="ASUS Logo" class="main-image" />
+        <h3 id="our-services">Our Services</h3>
+        <div class="cards">
+          <div class="card">
+            <h4 id="web-title">Web Design</h4>
+            <p id="web-text">Modern responsive designs for all devices.</p>
+          </div>
+          <div class="card">
+            <h4 id="seo-title">SEO</h4>
+            <p id="seo-text">Improve your site’s visibility on Google.</p>
+          </div>
+          <div class="card">
+            <h4 id="support-title">Support</h4>
+            <p id="support-text">24/7 customer support for your needs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <h3 id="contact-title">Contact Us</h3>
+        <form>
+          <label for="name" id="name-label">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your name" />
+          <label for="email" id="email-label">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your email" />
+          <label for="message" id="message-label">Message:</label>
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
+          <button type="submit" id="send-btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p id="footer-text">&copy; 2025 Sarkhan; All rights reserved.</p>
+  </footer>
+
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="reg-title">Создать аккаунт</h2>
+      <form>
+        <input type="text" id="reg-name" placeholder="Никнейм/Nickname" required />
+        <input type="email" id="reg-email" placeholder="Email" required />
+        <input type="password" id="reg-password" placeholder="Пароль/Password" required />
+        <button type="submit" id="reg-btn">Зарегистрироваться</button>
+      </form>
+      <div class="divider" id="reg-or">или</div>
+      <div class="social-buttons">
+        <div class="social-btn">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"> Google
+        </div>
+        <div class="social-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook
+        </div>
+        <div class="social-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK"> VK
+        </div>
+        <div class="social-btn">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"> Apple
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        home: "Home Page", about: "About Us", services: "Our Services", contact: "Contact Us", register: "Register",
+        welcome: "Welcome!", intro: "This is a website layout using Flexbox and CSS styling. Below is an image and some information.",
+        ourServices: "Our Services", webDesign: "Web Design", webText: "Modern responsive designs for all devices.",
+        seo: "SEO", seoText: "Improve your site’s visibility on Google.",
+        support: "Support", supportText: "24/7 customer support for your needs.",
+        contactUs: "Contact Us", name: "Name", email: "Email", message: "Message", send: "Send",
+        copyright: "&copy; 2025 Sarkhan; All rights reserved.",
+        password: "Password", or: "or"
+      },
+      ru: {
+        home: "Главная", about: "О нас", services: "Услуги", contact: "Контакты", register: "Регистрация",
+        welcome: "Добро пожаловать!", intro: "Это макет веб-сайта с использованием Flexbox и CSS. Ниже изображение и информация.",
+        ourServices: "Наши Услуги", webDesign: "Веб-дизайн", webText: "Современный адаптивный дизайн для всех устройств.",
+        seo: "SEO", seoText: "Улучшите видимость сайта в Google.",
+        support: "Поддержка", supportText: "Круглосуточная поддержка клиентов.",
+        contactUs: "Свяжитесь с нами", name: "Имя", email: "Email", message: "Сообщение", send: "Отправить",
+        copyright: "&copy; 2025 Сархан; Все права защищены.",
+        password: "Пароль", or: "или"
+      }
+    };
+
+    let currentLang = "en";
+    function toggleLang() {
+      currentLang = currentLang === "en" ? "ru" : "en";
+      const t = translations[currentLang];
+      document.getElementById("nav-home").textContent = t.home;
+      document.getElementById("nav-about").textContent = t.about;
+      document.getElementById("nav-services").textContent = t.services;
+      document.getElementById("nav-contact").textContent = t.contact;
+      document.getElementById("nav-register").textContent = t.register;
+      document.getElementById("welcome").textContent = t.welcome;
+      document.getElementById("intro").textContent = t.intro;
+      document.getElementById("our-services").textContent = t.ourServices;
+      document.getElementById("web-title").textContent = t.webDesign;
+      document.getElementById("web-text").textContent = t.webText;
+      document.getElementById("seo-title").textContent = t.seo;
+      document.getElementById("seo-text").textContent = t.seoText;
+      document.getElementById("support-title").textContent = t.support;
+      document.getElementById("support-text").textContent = t.supportText;
+      document.getElementById("contact-title").textContent = t.contactUs;
+      document.getElementById("name-label").textContent = t.name + ":";
+      document.getElementById("email-label").textContent = t.email + ":";
+      document.getElementById("message-label").textContent = t.message + ":";
+      document.getElementById("send-btn").textContent = t.send;
+      document.getElementById("footer-text").innerHTML = t.copyright;
+      document.getElementById("reg-title").textContent = t.register;
+      document.getElementById("reg-name").placeholder = t.name;
+      document.getElementById("reg-email").placeholder = t.email;
+      document.getElementById("reg-password").placeholder = t.password;
+      document.getElementById("reg-btn").textContent = t.register;
+      document.getElementById("reg-or").textContent = t.or;
+      document.querySelector(".lang-btn").textContent = currentLang === "en" ? "RU" : "EN";
+    }
+
+    function openModal() {
+      document.getElementById("registerModal").classList.add("show");
+    }
+
+    function closeModal() {
+      document.getElementById("registerModal").classList.remove("show");
+    }
+  </script>
+</body>
+</html>
