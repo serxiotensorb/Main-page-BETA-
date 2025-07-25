@@ -6,21 +6,34 @@
   <title>My new Website</title>
   <link rel="icon" type="image/x-icon" href="https://www.google.com/favicon.ico">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <button class="lang-btn" onclick="toggleLang()">RU</button>
 
   <header class="header">
-    <h1>My Awesome Website</h1>
+    <div class="header-content">
+      <h1>My Awesome Website</h1>
+      <p id="header-subtitle">Innovative solutions for your digital needs</p>
+    </div>
+    <div class="header-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#fff"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#fff"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#fff"></path>
+      </svg>
+    </div>
   </header>
 
   <nav class="navbar">
-    <a href="#" id="nav-home">Home Page</a>
-    <a href="#" id="nav-about">About Us</a>
-    <a href="#" id="nav-services">Our Services</a>
-    <a href="#" id="nav-contact">Contact Us</a>
-    <a href="javascript:void(0);" id="nav-register" onclick="openModal()">Register</a>
+    <div class="nav-container">
+      <a href="#" id="nav-home"><i class="fas fa-home"></i> Home Page</a>
+      <a href="#" id="nav-about"><i class="fas fa-info-circle"></i> About Us</a>
+      <a href="#" id="nav-services"><i class="fas fa-cogs"></i> Our Services</a>
+      <a href="#" id="nav-contact"><i class="fas fa-envelope"></i> Contact Us</a>
+      <a href="javascript:void(0);" id="nav-register" onclick="openModal()"><i class="fas fa-user-plus"></i> Register</a>
+    </div>
   </nav>
 
   <main class="main">
@@ -28,20 +41,43 @@
       <div class="main-content">
         <h2 id="welcome">Welcome!</h2>
         <p id="intro">This is a website layout using Flexbox and CSS styling. Below is an image and some information.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/AsusTek_Computer_Logo.svg" alt="ASUS Logo" class="main-image" />
+        <div class="image-container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/AsusTek_Computer_Logo.svg" alt="ASUS Logo" class="main-image" />
+          <div class="image-overlay">
+            <p>Premium Quality Services</p>
+          </div>
+        </div>
         <h3 id="our-services">Our Services</h3>
         <div class="cards">
           <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
             <h4 id="web-title">Web Design</h4>
             <p id="web-text">Modern responsive designs for all devices.</p>
+            <div class="card-hover">
+              <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
           <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
             <h4 id="seo-title">SEO</h4>
-            <p id="seo-text">Improve your site’s visibility on Google.</p>
+            <p id="seo-text">Improve your site's visibility on Google.</p>
+            <div class="card-hover">
+              <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
           <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-headset"></i>
+            </div>
             <h4 id="support-title">Support</h4>
             <p id="support-text">24/7 customer support for your needs.</p>
+            <div class="card-hover">
+              <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -49,45 +85,85 @@
       <div class="sidebar">
         <h3 id="contact-title">Contact Us</h3>
         <form>
-          <label for="name" id="name-label">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your name" />
-          <label for="email" id="email-label">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Your email" />
-          <label for="message" id="message-label">Message:</label>
-          <textarea id="message" name="message" placeholder="Your message"></textarea>
-          <button type="submit" id="send-btn">Send</button>
+          <div class="input-group">
+            <label for="name" id="name-label">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+          </div>
+          <div class="input-group">
+            <label for="email" id="email-label">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" />
+          </div>
+          <div class="input-group">
+            <label for="message" id="message-label">Message:</label>
+            <textarea id="message" name="message" placeholder="Your message"></textarea>
+          </div>
+          <button type="submit" id="send-btn">
+            <span>Send</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
         </form>
       </div>
     </div>
   </main>
 
   <footer class="footer">
-    <p id="footer-text">&copy; 2025 Sarkhan; All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p id="footer-text">&copy; 2025 Sarkhan; All rights reserved.</p>
+    </div>
+    <div class="footer-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#fff"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#fff"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#fff"></path>
+      </svg>
+    </div>
   </footer>
 
   <div id="registerModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="reg-title">Создать аккаунт</h2>
+      <h2 id="reg-title">Регистрация</h2>
       <form>
-        <input type="text" id="reg-name" placeholder="Никнейм/Nickname" required />
-        <input type="email" id="reg-email" placeholder="Email" required />
-        <input type="password" id="reg-password" placeholder="Пароль/Password" required />
-        <button type="submit" id="reg-btn">Зарегистрироваться</button>
+        <div class="input-group">
+          <input type="text" id="reg-name" placeholder="Никнейм" required />
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="input-group">
+          <input type="email" id="reg-email" placeholder="Email" required />
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="input-group">
+          <input type="password" id="reg-password" placeholder="Пароль" required />
+          <i class="fas fa-lock"></i>
+        </div>
+        <button type="submit" id="reg-btn">
+          <span>Зарегистрироваться</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
       </form>
       <div class="divider" id="reg-or">или</div>
       <div class="social-buttons">
-        <div class="social-btn">
-          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"> Google
+        <div class="social-btn google">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+          <span>Google</span>
         </div>
-        <div class="social-btn">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook
+        <div class="social-btn facebook">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+          <span>Facebook</span>
         </div>
-        <div class="social-btn">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK"> VK
+        <div class="social-btn vk">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="VK">
+          <span>VK</span>
         </div>
-        <div class="social-btn">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"> Apple
+        <div class="social-btn apple">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+          <span>Apple</span>
         </div>
       </div>
     </div>
@@ -99,11 +175,12 @@
         home: "Home Page", about: "About Us", services: "Our Services", contact: "Contact Us", register: "Register",
         welcome: "Welcome!", intro: "This is a website layout using Flexbox and CSS styling. Below is an image and some information.",
         ourServices: "Our Services", webDesign: "Web Design", webText: "Modern responsive designs for all devices.",
-        seo: "SEO", seoText: "Improve your site’s visibility on Google.",
+        seo: "SEO", seoText: "Improve your site's visibility on Google.",
         support: "Support", supportText: "24/7 customer support for your needs.",
         contactUs: "Contact Us", name: "Nickname", email: "Email", message: "Message", send: "Send",
         copyright: "&copy; 2025 Sarkhan; All rights reserved.",
-        password: "Password", or: "or"
+        password: "Password", or: "or",
+        headerSubtitle: "Innovative solutions for your digital needs"
       },
       ru: {
         home: "Главная", about: "О нас", services: "Услуги", contact: "Контакты", register: "Регистрация",
@@ -113,7 +190,8 @@
         support: "Поддержка", supportText: "Круглосуточная поддержка клиентов.",
         contactUs: "Свяжитесь с нами", name: "Никнейм", email: "Email", message: "Сообщение", send: "Отправить",
         copyright: "&copy; 2025 Сархан; Все права защищены.",
-        password: "Пароль", or: "или"
+        password: "Пароль", or: "или",
+        headerSubtitle: "Инновационные решения для ваших цифровых потребностей"
       }
     };
 
@@ -121,11 +199,11 @@
     function toggleLang() {
       currentLang = currentLang === "en" ? "ru" : "en";
       const t = translations[currentLang];
-      document.getElementById("nav-home").textContent = t.home;
-      document.getElementById("nav-about").textContent = t.about;
-      document.getElementById("nav-services").textContent = t.services;
-      document.getElementById("nav-contact").textContent = t.contact;
-      document.getElementById("nav-register").textContent = t.register;
+      document.getElementById("nav-home").innerHTML = `<i class="fas fa-home"></i> ${t.home}`;
+      document.getElementById("nav-about").innerHTML = `<i class="fas fa-info-circle"></i> ${t.about}`;
+      document.getElementById("nav-services").innerHTML = `<i class="fas fa-cogs"></i> ${t.services}`;
+      document.getElementById("nav-contact").innerHTML = `<i class="fas fa-envelope"></i> ${t.contact}`;
+      document.getElementById("nav-register").innerHTML = `<i class="fas fa-user-plus"></i> ${t.register}`;
       document.getElementById("welcome").textContent = t.welcome;
       document.getElementById("intro").textContent = t.intro;
       document.getElementById("our-services").textContent = t.ourServices;
@@ -139,24 +217,34 @@
       document.getElementById("name-label").textContent = t.name + ":";
       document.getElementById("email-label").textContent = t.email + ":";
       document.getElementById("message-label").textContent = t.message + ":";
-      document.getElementById("send-btn").textContent = t.send;
+      document.getElementById("send-btn").innerHTML = `<span>${t.send}</span><i class="fas fa-paper-plane"></i>`;
       document.getElementById("footer-text").innerHTML = t.copyright;
       document.getElementById("reg-title").textContent = t.register;
       document.getElementById("reg-name").placeholder = t.name;
       document.getElementById("reg-email").placeholder = t.email;
       document.getElementById("reg-password").placeholder = t.password;
-      document.getElementById("reg-btn").textContent = t.register;
+      document.getElementById("reg-btn").innerHTML = `<span>${t.register}</span><i class="fas fa-arrow-right"></i>`;
       document.getElementById("reg-or").textContent = t.or;
+      document.getElementById("header-subtitle").textContent = t.headerSubtitle;
       document.querySelector(".lang-btn").textContent = currentLang === "en" ? "RU" : "EN";
     }
 
     function openModal() {
       document.getElementById("registerModal").classList.add("show");
+      document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
       document.getElementById("registerModal").classList.remove("show");
-   
+      document.body.style.overflow = "auto";
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('registerModal');
+      if (event.target == modal) {
+        closeModal();
+      }
     }
   </script>
 </body>
