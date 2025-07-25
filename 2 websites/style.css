@@ -24,18 +24,18 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding-bottom: 80px;
+  padding-bottom: 200px;
 }
 
 .header-content {
-  padding: 60px 20px 40px;
+  padding: 10px 20px 40px;
   position: relative;
   z-index: 2;
 }
 
 .header h1 {
   font-size: 3rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   font-weight: 700;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -44,6 +44,7 @@ body {
   font-size: 1.2rem;
   opacity: 0.9;
   font-weight: 300;
+  color: #696969;
 }
 
 .header-wave {
@@ -324,8 +325,11 @@ body {
 .input-group i {
   position: absolute;
   left: 15px;
-  top: 15px;
+  top: 48px;
   color: #636e72;
+}
+.modal .input-group i {
+  top: 15px;
 }
 
 button {
@@ -422,7 +426,7 @@ button:hover i {
   top: 20px;
   right: 20px;
   padding: 8px 16px;
-  background: white;
+  background: rgb(113, 102, 102);
   border: none;
   border-radius: 8px;
   cursor: pointer;
