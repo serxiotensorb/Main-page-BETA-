@@ -622,6 +622,293 @@ button:hover i {
   }
 }
 
+
+/* About Section Styles */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.about-image-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-image {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-image-container:hover .about-image {
+  transform: scale(1.03);
+}
+
+.about-features {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.about-feature {
+  flex: 1;
+  min-width: 250px;
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.about-feature i {
+  font-size: 2rem;
+  color: #4ca1af;
+  margin-bottom: 15px;
+}
+
+.about-feature h4 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.team-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.team-card {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.team-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 5px solid #f0f9ff;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-position {
+  color: #4ca1af;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.team-bio {
+  color: #636e72;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.team-social a {
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.team-social a:hover {
+  color: #4ca1af;
+}
+
+.achievement {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.achievement:last-child {
+  border-bottom: none;
+}
+
+.achievement-icon {
+  width: 50px;
+  height: 50px;
+  background: #f0f9ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4ca1af;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.achievement-content h4 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.achievement-content p {
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+.timeline {
+  margin-top: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 70px;
+  margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: #dfe6e9;
+}
+
+.timeline-date {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #4ca1af;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.timeline-content {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.timeline-content h4 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  color: #636e72;
+  font-size: 0.9rem;
+}
+
+/* Active nav link */
+.nav-link.active {
+  background: linear-gradient(135deg, #4ca1af, #2c3e50);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+/* Contact Section Styles */
+.contact-info {
+  margin: 30px 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: #4ca1af;
+  margin-top: 3px;
+}
+
+.contact-item h4 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.contact-item p {
+  color: #636e72;
+}
+
+.map-container {
+  margin-top: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Services Section Styles */
+.services-feature {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.services-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.services-feature i {
+  font-size: 2rem;
+  color: #4ca1af;
+  margin-bottom: 15px;
+  display: block;
+  text-align: center;
+}
+
+.services-feature h4 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.services-feature p {
+  text-align: center;
+  color: #636e72;
+}
+
+
 /* Animation classes */
 @keyframes fadeIn {
   from { opacity: 0; }
