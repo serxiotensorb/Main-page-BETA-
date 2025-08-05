@@ -28,82 +28,412 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="#" id="nav-home"><i class="fas fa-home"></i> Home Page</a>
-      <a href="#" id="nav-about"><i class="fas fa-info-circle"></i> About Us</a>
-      <a href="#" id="nav-services"><i class="fas fa-cogs"></i> Our Services</a>
-      <a href="#" id="nav-contact"><i class="fas fa-envelope"></i> Contact Us</a>
+      <a href="#" id="nav-home" class="nav-link active" data-section="home"><i class="fas fa-home"></i> Home Page</a>
+      <a href="#" id="nav-about" class="nav-link" data-section="about"><i class="fas fa-info-circle"></i> About Us</a>
+      <a href="#" id="nav-services" class="nav-link" data-section="services"><i class="fas fa-cogs"></i> Our Services</a>
+      <a href="#" id="nav-contact" class="nav-link" data-section="contact"><i class="fas fa-envelope"></i> Contact Us</a>
       <a href="javascript:void(0);" id="nav-register" onclick="openModal()"><i class="fas fa-user-plus"></i> Register</a>
     </div>
   </nav>
 
   <main class="main">
-    <div class="container">
-      <div class="main-content">
-        <h2 id="welcome">Welcome!</h2>
-        <p id="intro">This is my new website, whisch is in BETA version and new updates will be soon.</p>
-        <div class="image-container">
-          <img src="images/Asuslogo.png"  alt="ASUS Logo" class="main-image" />
-          <div class="image-overlay">
-            <p class="highlighted-text">Premium Quality Services</p>
+    <!-- Home Section (default visible) -->
+    <div class="section" id="home-section">
+      <div class="container">
+        <div class="main-content">
+          <h2 id="welcome">Welcome!</h2>
+          <p id="intro">This is my new website, which is in BETA version and new updates will be soon.</p>
+          <div class="image-container">
+            <img src="images/Asuslogo.png" alt="ASUS Logo" class="main-image" />
+            <div class="image-overlay">
+              <p class="highlighted-text">Premium Quality Services</p>
+            </div>
+          </div>
+          <h3 id="our-services-title">Our Services</h3>
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h4 id="web-title">Web Design</h4>
+              <p id="web-text">Modern responsive designs for all devices.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 id="seo-title">SEO</h4>
+              <p id="seo-text">Improve your site's visibility on Google.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4 id="support-title">Support</h4>
+              <p id="support-text">24/7 customer support for your needs.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
         </div>
-        <h3 id="our-services">Our Services</h3>
-        <div class="cards">
-          <div class="card">
-            <div class="card-icon">
-              <i class="fas fa-laptop-code"></i>
+
+        <div class="sidebar">
+          <h3 id="contact-title">Contact Us</h3>
+          <form>
+            <div class="input-group">
+              <label for="name" id="name-label">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Your name" />
+              <i class="fas fa-user"></i>
             </div>
-            <h4 id="web-title">Web Design</h4>
-            <p id="web-text">Modern responsive designs for all devices.</p>
-            <div class="card-hover">
-              <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+            <div class="input-group">
+              <label for="email" id="email-label">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Your email" />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="input-group">
+              <label for="message" id="message-label">Message:</label>
+              <textarea id="message" name="message" placeholder="Your message"></textarea>
+            </div>
+            <button type="submit" id="send-btn">
+              <span>Send</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section (hidden by default) -->
+    <div class="section" id="about-section" style="display: none;">
+      <div class="container">
+        <div class="main-content">
+          <h2 id="about-title">About Our Company</h2>
+          <p id="about-text">We are a team of passionate professionals dedicated to delivering top-notch digital solutions to our clients worldwide.</p>
+          
+          <div class="about-content">
+            <div class="about-image-container">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Our Team" class="about-image">
+            </div>
+            
+            <div class="about-features">
+              <div class="about-feature">
+                <i class="fas fa-rocket"></i>
+                <h4 id="mission-title">Our Mission</h4>
+                <p id="mission-text">To empower businesses with innovative digital solutions that drive growth and success.</p>
+              </div>
+              <div class="about-feature">
+                <i class="fas fa-eye"></i>
+                <h4 id="vision-title">Our Vision</h4>
+                <p id="vision-text">To be a global leader in digital transformation services.</p>
+              </div>
+              <div class="about-feature">
+                <i class="fas fa-heart"></i>
+                <h4 id="values-title">Our Values</h4>
+                <p id="values-text">Integrity, Innovation, Excellence, and Customer Satisfaction.</p>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-icon">
-              <i class="fas fa-chart-line"></i>
+          
+          <h3 id="team-title">Our Team</h3>
+          <div class="team-cards">
+            <div class="team-card">
+              <div class="team-image">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member">
+              </div>
+              <h4>John Smith</h4>
+              <p class="team-position">CEO & Founder</p>
+              <p class="team-bio">With over 15 years of experience in the tech industry, John leads our company with vision and passion.</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
             </div>
-            <h4 id="seo-title">SEO</h4>
-            <p id="seo-text">Improve your site's visibility on Google.</p>
-            <div class="card-hover">
-              <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+            
+            <div class="team-card">
+              <div class="team-image">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+              </div>
+              <h4>Sarah Johnson</h4>
+              <p class="team-position">Creative Director</p>
+              <p class="team-bio">Sarah brings creativity and innovation to every project with her 10 years of design experience.</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            
+            <div class="team-card">
+              <div class="team-image">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team Member">
+              </div>
+              <h4>Michael Brown</h4>
+              <p class="team-position">Lead Developer</p>
+              <p class="team-bio">Michael's technical expertise ensures our solutions are robust, scalable, and cutting-edge.</p>
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-icon">
-              <i class="fas fa-headset"></i>
+        </div>
+        
+        <div class="sidebar">
+          <h3 id="achievements-title">Our Achievements</h3>
+          <div class="achievement">
+            <div class="achievement-icon">
+              <i class="fas fa-trophy"></i>
             </div>
-            <h4 id="support-title">Support</h4>
-            <p id="support-text">24/7 customer support for your needs.</p>
-            <div class="card-hover">
-              <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+            <div class="achievement-content">
+              <h4>Best Digital Agency 2024</h4>
+              <p>Awarded by Tech Awards International</p>
+            </div>
+          </div>
+          
+          <div class="achievement">
+            <div class="achievement-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="achievement-content">
+              <h4>Top Developer Team</h4>
+              <p>Recognized by Developer Magazine</p>
+            </div>
+          </div>
+          
+          <div class="achievement">
+            <div class="achievement-icon">
+              <i class="fas fa-award"></i>
+            </div>
+            <div class="achievement-content">
+              <h4>Customer Satisfaction Award</h4>
+              <p>98% positive client feedback</p>
+            </div>
+          </div>
+          
+          <h3 id="timeline-title">Company Timeline</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2018</div>
+              <div class="timeline-content">
+                <h4>Company Founded</h4>
+                <p>Started as a small team of 3 people</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2020</div>
+              <div class="timeline-content">
+                <h4>First Major Client</h4>
+                <p>Secured contract with Fortune 500 company</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2023</div>
+              <div class="timeline-content">
+                <h4>International Expansion</h4>
+                <p>Opened offices in 3 new countries</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="sidebar">
-        <h3 id="contact-title">Contact Us</h3>
-        <form>
-          <div class="input-group">
-            <label for="name" id="name-label">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your name" />
-            <i class="fas fa-user"></i>
+    <!-- Services Section (hidden by default) -->
+    <div class="section" id="services-section" style="display: none;">
+      <div class="container">
+        <div class="main-content">
+          <h2 id="services-main-title">Our Services</h2>
+          <p id="services-main-text">We offer a comprehensive range of digital services to help your business grow and succeed in the online world.</p>
+          
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h4 id="services-web-title">Web Design</h4>
+              <p id="services-web-text">Modern responsive designs for all devices. We create beautiful, functional websites that represent your brand perfectly.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 id="services-seo-title">SEO</h4>
+              <p id="services-seo-text">Improve your site's visibility on Google. Our SEO strategies will help you rank higher and attract more visitors.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4 id="services-support-title">Support</h4>
+              <p id="services-support-text">24/7 customer support for your needs. We're always here to help you with any technical issues.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="email" id="email-label">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your email" />
-            <i class="fas fa-envelope"></i>
+          
+          <h3 id="additional-services-title">Additional Services</h3>
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h4 id="mobile-dev-title">Mobile Development</h4>
+              <p id="mobile-dev-text">Custom mobile apps for iOS and Android platforms, designed for optimal performance and user experience.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-bullhorn"></i>
+              </div>
+              <h4 id="marketing-title">Digital Marketing</h4>
+              <p id="marketing-text">Comprehensive digital marketing strategies including social media, email campaigns, and PPC advertising.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h4 id="cloud-title">Cloud Solutions</h4>
+              <p id="cloud-text">Secure and scalable cloud infrastructure solutions tailored to your business requirements.</p>
+              <div class="card-hover">
+                <a href="#">Learn more <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
           </div>
-          <div class="input-group">
-            <label for="message" id="message-label">Message:</label>
-            <textarea id="message" name="message" placeholder="Your message"></textarea>
+        </div>
+        
+        <div class="sidebar">
+          <h3 id="why-choose-us-title">Why Choose Us</h3>
+          <div class="about-feature">
+            <i class="fas fa-star"></i>
+            <h4 id="experience-title">10+ Years Experience</h4>
+            <p id="experience-text">We have been serving clients worldwide for over a decade.</p>
           </div>
-          <button type="submit" id="send-btn">
-            <span>Send</span>
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
+          <div class="about-feature">
+            <i class="fas fa-users"></i>
+            <h4 id="clients-title">500+ Happy Clients</h4>
+            <p id="clients-text">Our clients trust us with their digital transformation needs.</p>
+          </div>
+          <div class="about-feature">
+            <i class="fas fa-project-diagram"></i>
+            <h4 id="projects-title">1000+ Projects</h4>
+            <p id="projects-text">We've successfully completed projects across various industries.</p>
+          </div>
+          
+          <h3 id="testimonials-title">Client Testimonials</h3>
+          <div class="achievement">
+            <div class="achievement-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <div class="achievement-content">
+              <p id="testimonial-1">"Their web design service transformed our online presence and increased our sales by 200%."</p>
+              <h4>- Mark Johnson</h4>
+            </div>
+          </div>
+          <div class="achievement">
+            <div class="achievement-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <div class="achievement-content">
+              <p id="testimonial-2">"The SEO strategies implemented by this team helped us rank #1 for our main keywords."</p>
+              <h4>- Sarah Williams</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section (hidden by default) -->
+    <div class="section" id="contact-section" style="display: none;">
+      <div class="container">
+        <div class="main-content">
+          <h2 id="contact-main-title">Contact Us</h2>
+          <p id="contact-main-text">Have questions or want to discuss your project? Get in touch with our team and we'll get back to you as soon as possible.</p>
+          
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4 id="address-title">Address</h4>
+                <p id="address-text">123 Business Street, Digital City, DC 10001</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h4 id="phone-title">Phone</h4>
+                <p id="phone-text">+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4 id="email-main-title">Email</h4>
+                <p id="email-main-text">info@myawesomewebsite.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4 id="hours-title">Working Hours</h4>
+                <p id="hours-text">Monday - Friday: 9:00 - 18:00</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215573291234!2d-73.98784492452564!3d40.74844097138978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1623251234567!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+        
+        <div class="sidebar">
+          <h3 id="send-message-title">Send Us a Message</h3>
+          <form>
+            <div class="input-group">
+              <label for="contact-name" id="contact-name-label">Name:</label>
+              <input type="text" id="contact-name" name="contact-name" placeholder="Your name" />
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="input-group">
+              <label for="contact-email" id="contact-email-label">Email:</label>
+              <input type="email" id="contact-email" name="contact-email" placeholder="Your email" />
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="input-group">
+              <label for="contact-subject" id="contact-subject-label">Subject:</label>
+              <input type="text" id="contact-subject" name="contact-subject" placeholder="Subject" />
+              <i class="fas fa-tag"></i>
+            </div>
+            <div class="input-group">
+              <label for="contact-message" id="contact-message-label">Message:</label>
+              <textarea id="contact-message" name="contact-message" placeholder="Your message"></textarea>
+            </div>
+            <button type="submit" id="contact-send-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </main>
@@ -175,25 +505,69 @@
     const translations = {
       en: {
         home: "Home Page", about: "About Us", services: "Our Services", contact: "Contact Us", register: "Register",
-        welcome: "Welcome!", intro: "This is my new website, whisch is in BETA version and new updates will be soon.",
-        ourServices: "Our Services", webDesign: "Web Design", webText: "Modern responsive designs for all devices.",
+        welcome: "Welcome!", intro: "This is my new website, which is in BETA version and new updates will be soon.",
+        ourServicesTitle: "Our Services", webDesign: "Web Design", webText: "Modern responsive designs for all devices.",
         seo: "SEO", seoText: "Improve your site's visibility on Google.",
         support: "Support", supportText: "24/7 customer support for your needs.",
-        contactUs: "Contact Us", name: "Nickname", email: "Email", message: "Message", send: "Send",
+        contactUs: "Contact Us", name: "Name", email: "Email", message: "Message", send: "Send",
         copyright: "&copy; 2025 Sarkhan; All rights reserved.",
         password: "Password", or: "or",
-        headerSubtitle: "Innovative solutions for your digital needs"
+        headerSubtitle: "Innovative solutions for your digital needs",
+        aboutTitle: "About Our Company", aboutText: "We are a team of passionate professionals dedicated to delivering top-notch digital solutions to our clients worldwide.",
+        mission: "Our Mission", missionText: "To empower businesses with innovative digital solutions that drive growth and success.",
+        vision: "Our Vision", visionText: "To be a global leader in digital transformation services.",
+        values: "Our Values", valuesText: "Integrity, Innovation, Excellence, and Customer Satisfaction.",
+        ourTeam: "Our Team", achievements: "Our Achievements", timeline: "Company Timeline",
+        servicesMainTitle: "Our Services", servicesMainText: "We offer a comprehensive range of digital services to help your business grow and succeed in the online world.",
+        servicesWebTitle: "Web Design", servicesWebText: "Modern responsive designs for all devices. We create beautiful, functional websites that represent your brand perfectly.",
+        servicesSeoTitle: "SEO", servicesSeoText: "Improve your site's visibility on Google. Our SEO strategies will help you rank higher and attract more visitors.",
+        servicesSupportTitle: "Support", servicesSupportText: "24/7 customer support for your needs. We're always here to help you with any technical issues.",
+        additionalServices: "Additional Services", mobileDev: "Mobile Development", mobileDevText: "Custom mobile apps for iOS and Android platforms, designed for optimal performance and user experience.",
+        marketing: "Digital Marketing", marketingText: "Comprehensive digital marketing strategies including social media, email campaigns, and PPC advertising.",
+        cloud: "Cloud Solutions", cloudText: "Secure and scalable cloud infrastructure solutions tailored to your business requirements.",
+        whyChooseUs: "Why Choose Us", experience: "10+ Years Experience", experienceText: "We have been serving clients worldwide for over a decade.",
+        clients: "500+ Happy Clients", clientsText: "Our clients trust us with their digital transformation needs.",
+        projects: "1000+ Projects", projectsText: "We've successfully completed projects across various industries.",
+        testimonials: "Client Testimonials", testimonial1: "\"Their web design service transformed our online presence and increased our sales by 200%.\"", testimonial2: "\"The SEO strategies implemented by this team helped us rank #1 for our main keywords.\"",
+        contactMainTitle: "Contact Us", contactMainText: "Have questions or want to discuss your project? Get in touch with our team and we'll get back to you as soon as possible.",
+        address: "Address", addressText: "123 Business Street, Digital City, DC 10001",
+        phone: "Phone", phoneText: "+1 (555) 123-4567",
+        emailMain: "Email", emailMainText: "info@myawesomewebsite.com",
+        hours: "Working Hours", hoursText: "Monday - Friday: 9:00 - 18:00",
+        sendMessage: "Send Us a Message", subject: "Subject", sendMessageBtn: "Send Message"
       },
       ru: {
         home: "Главная", about: "О нас", services: "Услуги", contact: "Контакты", register: "Регистрация",
         welcome: "Добро пожаловать!", intro: "Это мой новый сайт, который находится в стадии BETA-версии и скоро появятся новые обновления.",
-        ourServices: "Наши Услуги", webDesign: "Веб-дизайн", webText: "Современный адаптивный дизайн для всех устройств.",
+        ourServicesTitle: "Наши Услуги", webDesign: "Веб-дизайн", webText: "Современный адаптивный дизайн для всех устройств.",
         seo: "SEO", seoText: "Улучшите видимость сайта в Google.",
         support: "Поддержка", supportText: "Круглосуточная поддержка клиентов.",
-        contactUs: "Свяжитесь с нами", name: "Никнейм", email: "Email", message: "Сообщение", send: "Отправить",
+        contactUs: "Свяжитесь с нами", name: "Имя", email: "Email", message: "Сообщение", send: "Отправить",
         copyright: "&copy; 2025 Сархан; Все права защищены.",
         password: "Пароль", or: "или",
-        headerSubtitle: "Инновационные решения для ваших цифровых потребностей"
+        headerSubtitle: "Инновационные решения для ваших цифровых потребностей",
+        aboutTitle: "О нашей компании", aboutText: "Мы - команда увлеченных профессионалов, посвятивших себя предоставлению первоклассных цифровых решений нашим клиентам по всему миру.",
+        mission: "Наша миссия", missionText: "Дать бизнесу инновационные цифровые решения, которые стимулируют рост и успех.",
+        vision: "Наше видение", visionText: "Стать мировым лидером в услугах цифровой трансформации.",
+        values: "Наши ценности", valuesText: "Честность, Инновации, Совершенство и Удовлетворенность клиентов.",
+        ourTeam: "Наша команда", achievements: "Наши достижения", timeline: "История компании",
+        servicesMainTitle: "Наши Услуги", servicesMainText: "Мы предлагаем широкий спектр цифровых услуг, которые помогут вашему бизнесу расти и преуспевать в онлайн-мире.",
+        servicesWebTitle: "Веб-дизайн", servicesWebText: "Современный адаптивный дизайн для всех устройств. Мы создаем красивые, функциональные веб-сайты, которые идеально представляют ваш бренд.",
+        servicesSeoTitle: "SEO", servicesSeoText: "Улучшите видимость сайта в Google. Наши SEO-стратегии помогут вам занять более высокие позиции и привлечь больше посетителей.",
+        servicesSupportTitle: "Поддержка", servicesSupportText: "Круглосуточная поддержка клиентов. Мы всегда готовы помочь вам с любыми техническими вопросами.",
+        additionalServices: "Дополнительные услуги", mobileDev: "Мобильная разработка", mobileDevText: "Пользовательские мобильные приложения для iOS и Android, разработанные для оптимальной производительности и удобства пользователей.",
+        marketing: "Цифровой маркетинг", marketingText: "Комплексные стратегии цифрового маркетинга, включая социальные сети, email-кампании и PPC-рекламу.",
+        cloud: "Облачные решения", cloudText: "Безопасные и масштабируемые облачные инфраструктурные решения, адаптированные под требования вашего бизнеса.",
+        whyChooseUs: "Почему выбирают нас", experience: "10+ лет опыта", experienceText: "Мы обслуживаем клиентов по всему миру более десяти лет.",
+        clients: "500+ довольных клиентов", clientsText: "Наши клиенты доверяют нам свои потребности в цифровой трансформации.",
+        projects: "1000+ проектов", projectsText: "Мы успешно завершили проекты в различных отраслях.",
+        testimonials: "Отзывы клиентов", testimonial1: "\"Их услуги веб-дизайна преобразили наше онлайн-присутствие и увеличили продажи на 200%.\"", testimonial2: "\"SEO-стратегии, реализованные этой командой, помогли нам занять 1-е место по нашим основным ключевым словам.\"",
+        contactMainTitle: "Контакты", contactMainText: "Есть вопросы или хотите обсудить свой проект? Свяжитесь с нашей командой, и мы ответим вам как можно скорее.",
+        address: "Адрес", addressText: "ул. Бизнес, 123, Цифровой Город, DC 10001",
+        phone: "Телефон", phoneText: "+1 (555) 123-4567",
+        emailMain: "Email", emailMainText: "info@myawesomewebsite.com",
+        hours: "Рабочие часы", hoursText: "Понедельник - Пятница: 9:00 - 18:00",
+        sendMessage: "Отправить сообщение", subject: "Тема", sendMessageBtn: "Отправить сообщение"
       }
     };
 
@@ -201,14 +575,18 @@
     function toggleLang() {
       currentLang = currentLang === "en" ? "ru" : "en";
       const t = translations[currentLang];
+      
+      // Navigation
       document.getElementById("nav-home").innerHTML = `<i class="fas fa-home"></i> ${t.home}`;
       document.getElementById("nav-about").innerHTML = `<i class="fas fa-info-circle"></i> ${t.about}`;
       document.getElementById("nav-services").innerHTML = `<i class="fas fa-cogs"></i> ${t.services}`;
       document.getElementById("nav-contact").innerHTML = `<i class="fas fa-envelope"></i> ${t.contact}`;
       document.getElementById("nav-register").innerHTML = `<i class="fas fa-user-plus"></i> ${t.register}`;
+      
+      // Home section
       document.getElementById("welcome").textContent = t.welcome;
       document.getElementById("intro").textContent = t.intro;
-      document.getElementById("our-services").textContent = t.ourServices;
+      document.getElementById("our-services-title").textContent = t.ourServicesTitle;
       document.getElementById("web-title").textContent = t.webDesign;
       document.getElementById("web-text").textContent = t.webText;
       document.getElementById("seo-title").textContent = t.seo;
@@ -220,6 +598,67 @@
       document.getElementById("email-label").textContent = t.email + ":";
       document.getElementById("message-label").textContent = t.message + ":";
       document.getElementById("send-btn").innerHTML = `<span>${t.send}</span><i class="fas fa-paper-plane"></i>`;
+      document.getElementById("header-subtitle").textContent = t.headerSubtitle;
+      
+      // About section
+      document.getElementById("about-title").textContent = t.aboutTitle;
+      document.getElementById("about-text").textContent = t.aboutText;
+      document.getElementById("mission-title").textContent = t.mission;
+      document.getElementById("mission-text").textContent = t.missionText;
+      document.getElementById("vision-title").textContent = t.vision;
+      document.getElementById("vision-text").textContent = t.visionText;
+      document.getElementById("values-title").textContent = t.values;
+      document.getElementById("values-text").textContent = t.valuesText;
+      document.getElementById("team-title").textContent = t.ourTeam;
+      document.getElementById("achievements-title").textContent = t.achievements;
+      document.getElementById("timeline-title").textContent = t.timeline;
+      
+      // Services section
+      document.getElementById("services-main-title").textContent = t.servicesMainTitle;
+      document.getElementById("services-main-text").textContent = t.servicesMainText;
+      document.getElementById("services-web-title").textContent = t.servicesWebTitle;
+      document.getElementById("services-web-text").textContent = t.servicesWebText;
+      document.getElementById("services-seo-title").textContent = t.servicesSeoTitle;
+      document.getElementById("services-seo-text").textContent = t.servicesSeoText;
+      document.getElementById("services-support-title").textContent = t.servicesSupportTitle;
+      document.getElementById("services-support-text").textContent = t.servicesSupportText;
+      document.getElementById("additional-services-title").textContent = t.additionalServices;
+      document.getElementById("mobile-dev-title").textContent = t.mobileDev;
+      document.getElementById("mobile-dev-text").textContent = t.mobileDevText;
+      document.getElementById("marketing-title").textContent = t.marketing;
+      document.getElementById("marketing-text").textContent = t.marketingText;
+      document.getElementById("cloud-title").textContent = t.cloud;
+      document.getElementById("cloud-text").textContent = t.cloudText;
+      document.getElementById("why-choose-us-title").textContent = t.whyChooseUs;
+      document.getElementById("experience-title").textContent = t.experience;
+      document.getElementById("experience-text").textContent = t.experienceText;
+      document.getElementById("clients-title").textContent = t.clients;
+      document.getElementById("clients-text").textContent = t.clientsText;
+      document.getElementById("projects-title").textContent = t.projects;
+      document.getElementById("projects-text").textContent = t.projectsText;
+      document.getElementById("testimonials-title").textContent = t.testimonials;
+      document.getElementById("testimonial-1").textContent = t.testimonial1;
+      document.getElementById("testimonial-2").textContent = t.testimonial2;
+      
+      // Contact section
+      document.getElementById("contact-main-title").textContent = t.contactMainTitle;
+      document.getElementById("contact-main-text").textContent = t.contactMainText;
+      document.getElementById("address-title").textContent = t.address;
+      document.getElementById("address-text").textContent = t.addressText;
+      document.getElementById("phone-title").textContent = t.phone;
+      document.getElementById("phone-text").textContent = t.phoneText;
+      document.getElementById("email-main-title").textContent = t.emailMain;
+      document.getElementById("email-main-text").textContent = t.emailMainText;
+      document.getElementById("hours-title").textContent = t.hours;
+      document.getElementById("hours-text").textContent = t.hoursText;
+      document.getElementById("send-message-title").textContent = t.sendMessage;
+      document.getElementById("contact-name-label").textContent = t.name + ":";
+      document.getElementById("contact-email-label").textContent = t.email + ":";
+      document.getElementById("contact-subject-label").textContent = t.subject + ":";
+      document.getElementById("contact-message-label").textContent = t.message + ":";
+      document.getElementById("contact-send-btn").innerHTML = `<span>${t.sendMessageBtn}</span><i class="fas fa-paper-plane"></i>`;
+      
+      // Footer and modal
       document.getElementById("footer-text").innerHTML = t.copyright;
       document.getElementById("reg-title").textContent = t.register;
       document.getElementById("reg-name").placeholder = t.name;
@@ -227,7 +666,7 @@
       document.getElementById("reg-password").placeholder = t.password;
       document.getElementById("reg-btn").innerHTML = `<span>${t.register}</span><i class="fas fa-arrow-right"></i>`;
       document.getElementById("reg-or").textContent = t.or;
-      document.getElementById("header-subtitle").textContent = t.headerSubtitle;
+      
       document.querySelector(".lang-btn").textContent = currentLang === "en" ? "RU" : "EN";
     }
 
@@ -241,6 +680,28 @@
       document.body.style.overflow = "auto";
     }
 
+    // Navigation between sections
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const section = this.getAttribute('data-section');
+        
+        // Hide all sections
+        document.querySelectorAll('.section').forEach(sec => {
+          sec.style.display = 'none';
+        });
+        
+        // Show selected section
+        document.getElementById(`${section}-section`).style.display = 'block';
+        
+        // Update active nav link
+        document.querySelectorAll('.nav-link').forEach(navLink => {
+          navLink.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    });
+
     // Close modal when clicking outside
     window.onclick = function(event) {
       const modal = document.getElementById('registerModal');
@@ -248,6 +709,12 @@
         closeModal();
       }
     }
+    
+    // Set home as active by default
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('home-section').style.display = 'block';
+      document.getElementById('nav-home').classList.add('active');
+    });
   </script>
 </body>
 </html>
